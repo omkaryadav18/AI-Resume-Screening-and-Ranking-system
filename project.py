@@ -27,7 +27,7 @@ def rank_resumes(job_description, resumes):
     return cosine_similarities
 
 #Streamlit app
-st.title("AI Resume Screenning and Ranking")
+st.title("AI Resume Screening and Ranking")
 
 #Job Description input
 st.header("Job Description")
@@ -51,5 +51,6 @@ if upload_files and job_description:
     #display scores
     results = pd.DataFrame({"Resume": [file.name for file in upload_files], "Score": scores})
     results = results.sort_values(by = "Score", ascending=False)
+
 
     st.write(results)
